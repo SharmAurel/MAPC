@@ -13,3 +13,8 @@ public class App {
         System.out.println("zzz");
     }
 }
+//call au 100g dans foodtype if then else 
+//le prix : pareil que cal au 100g j'invente un prix constante viande exemple 
+//has unique price : vrai pr les sauces faux pour les autres
+//ingredient : je mets consteucteur avec quel type + le poids
+//calorie au 100g : delegué a la methode calorie au 100g  foodtype 
