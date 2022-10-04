@@ -2,7 +2,7 @@ package mapc.td1.step1.general;
 
 import java.util.List;
 
-public class Burger implements Product {
+public class Burger implements FoodProduct {
 
     String name;
     List<Product> items;
@@ -34,5 +34,17 @@ public class Burger implements Product {
         buffer.append(String.format("price:         %.2f\n", price()));
         buffer.append(DELIM);
         return buffer.toString();
+    }
+
+    @Override
+    public double calories_per_100g() {
+        // TODO Auto-generated method stub
+        return 0;
+    }
+
+    @Override
+    public double calories() {
+        // TODO Auto-generated method stub
+        return 0;
     }
 }
