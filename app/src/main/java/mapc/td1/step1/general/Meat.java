@@ -30,7 +30,7 @@ public class Meat implements FoodProduct {
     public String toString() {
         return String.format("%s (%.0fg) -- %.2f€", type, weight(), price());
     }
-
+    
     
     @Override
     public double calories_per_100g() {

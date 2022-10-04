@@ -26,13 +26,11 @@ public class Tomato implements FoodProduct {
 
     @Override
     public double calories_per_100g() {
-        // TODO Auto-generated method stub
-        return 0;
+        return 18;
     }
 
     @Override
     public double calories() {
-        // TODO Auto-generated method stub
-        return 0;
+        return calories_per_100g()*weight/100;
     }
 }

@@ -5,21 +5,21 @@ import java.util.List;
 public class Burger implements FoodProduct {
 
     String name;
-    List<Product> items;
+    List<FoodProduct> items;
 
-    public Burger(String name, List<Product> items) {
+    public Burger(String name, List<FoodProduct> items) {
         this.name = name;
         this.items = items;
     }
 
     @Override
     public double weight() {
-        return items.stream().map(Product::weight).reduce(0.0, Double::sum);
+        return items.stream().map(FoodProduct::weight).reduce(0.0, Double::sum);
     }
 
     @Override
     public double price() {
-        return items.stream().map(Product::price).reduce(0.0, Double::sum);
+        return items.stream().map(FoodProduct::price).reduce(0.0, Double::sum);
     }
 
     @Override
@@ -33,18 +33,19 @@ public class Burger implements FoodProduct {
         buffer.append(DELIM);
         buffer.append(String.format("price:         %.2f\n", price()));
         buffer.append(DELIM);
+        buffer.append(String.format("calories:         %.2f\n", calories()));
+        buffer.append(DELIM);
+        buffer.append(String.format("calories au 100g:         %.2f\n", calories_per_100g()));
         return buffer.toString();
     }
 
     @Override
     public double calories_per_100g() {
-        // TODO Auto-generated method stub
-        return 0;
+        return calories()/weight()*100;
     }
 
     @Override
     public double calories() {
-        // TODO Auto-generated method stub
-        return 0;
+        return items.stream().map(FoodProduct::calories).reduce(0.0, Double::sum);
     }
 }

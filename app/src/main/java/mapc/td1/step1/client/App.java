@@ -1,11 +1,18 @@
 package mapc.td1.step1.client;
 
-import mapc.td1.original.api.general.*;
-import static mapc.td1.original.api.general.Meat.MeatType.*;
-import static mapc.td1.original.api.general.Sauce.SauceType.*;
 
 import java.util.Arrays;
 import java.util.List;
+import mapc.td1.step1.general.*;
+import mapc.td1.step1.general.Cheddar;
+import mapc.td1.step1.general.Sauce;
+import mapc.td1.step1.general.SauceType;
+import mapc.td1.step1.general.MeatType;
+import mapc.td1.step1.general.Burger;
+import mapc.td1.step1.general.DeepFriedOnions;
+import mapc.td1.step1.general.Meat;
+import static mapc.td1.step1.general.MeatType.*;
+import static mapc.td1.step1.general.SauceType.*;
 
 public class App {
     public static void main(String args[]) {
