@@ -20,11 +20,14 @@ package td2 {
                 + removeChildren()
             }
 
-            interface FSFactory {
+            class FSFactory {
                 - {static} instance : FSFactory
-                + createComposant(in type: ComposantType, in name: String, in owner: Owner)
+                createComposant(in type: ComposantType, in name: String, in owner: Owner) : Composant
                 + {static} getInstance() : FSFactory
+                ~ this() : FSFactory
             }
+
+            
 
             enum ComposantType {
                 REPERTOIRE, FICHIER
@@ -81,7 +84,7 @@ package td2 {
 }
 
    Composite *-> Composant
-   ComposantImpl --> "1" Owner  : -owner
+   Composant --> "1" Owner  : -owner
    FSFactory --> ComposantType
    Repertoire *--> "*" Composant : - elems
    FSFactory o-- Composant
