@@ -2,15 +2,21 @@ package mapc.td1.step2.burger;
 
 import java.util.List;
 
-public class Burger implements Ingredient{
+import mapc.td1.step2.restauration.WeightedFoodProduct;
+
+public class Burger implements WeightedFoodProduct{
 
     String name;
     List<Ingredient> items;
+
+    
 
     public Burger(String name, List<Ingredient> items) {
         this.name = name;
         this.items = items;
     }
+   
+    
 
     @Override
     public double weight() {
@@ -47,5 +53,13 @@ public class Burger implements Ingredient{
     @Override
     public double calories() {
         return items.stream().map(Ingredient::calories).reduce(0.0, Double::sum);
+    }
+
+
+
+    @Override
+    public boolean hasUniquePrice() {
+        // TODO Auto-generated method stub
+        return false;
     }
 }
